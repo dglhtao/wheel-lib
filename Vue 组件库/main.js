@@ -14,7 +14,7 @@ import BsTable from '@/components/BsTable/src/table'
 import InputNumber from '@/components/InputNumber'
 import InputNumber1 from '@/components/InputNumber1'
 import Empty from '@/components/Empty'
-import CSvg from '@/components/CSvg'
+import Svg from '@/components/Svg'
 
 Vue.use(Loading)
 Vue.use(MyIframe)
@@ -27,7 +27,7 @@ Vue.component(Switch.name, Switch)
 Vue.component(InputNumber.name, InputNumber)
 Vue.component(InputNumber1.name, InputNumber1)
 Vue.component(Empty.name, Empty)
-Vue.component(CSvg.name, CSvg)
+Vue.component(Svg.name, Svg)
 
 const app = new Vue({
   router,
