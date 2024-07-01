@@ -104,6 +104,15 @@
       pointer-events: none;
     }
   }
+  .align-left {
+    text-align: left;
+    padding-right: 0;
+    padding-left: 30px;
+    .col div {
+      text-align: left;
+      justify-content: flex-start
+    }
+  }
   .pos-rel {
     position: relative;
   }

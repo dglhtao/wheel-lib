@@ -42,7 +42,8 @@ export default {
     return (
       <tr onclick={() => this.handleClick(this.index, this.row)}>
         {this.columns.map(column => {
-          const classStr = column.fixed === 'left' ? 'fix-left' : ''
+          let classStr = column.fixed === 'left' ? 'fix-left' : ''
+          classStr += column.align === 'left' ? ' align-left' : ''
 
           const styles = { left: 0 }
           return (

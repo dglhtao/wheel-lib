@@ -38,7 +38,8 @@ export default {
       <thead class="bs-table-thead">
         <tr class="no-wrap">
           {this.columns.map((column, index) => {
-            const classStr = column.fixed === 'left' ? 'fix-left pos-rel' : 'pos-rel'
+            let classStr = column.fixed === 'left' ? 'fix-left pos-rel' : 'pos-rel'
+            classStr += column.align === 'left' ? ' align-left' : ''
 
             const styles = { left: 0 }
             return (
