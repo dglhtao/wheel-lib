@@ -17,7 +17,9 @@ const _completeDeepClone = (target, map = new Map()) => {
 export const deepClone = (data, map = new Map()) => {
   if (data === undefined || data === null) { return data }
   if ([Function, Set, RegExp, Date].includes(Object.getPrototypeOf(data).constructor)) {
-    return new (Object.getPrototypeOf(data)).constructor(data)
+    // 因为浏览器安全策略很多不允许 new Function()，所以可以视情况，对这类数据直接引用
+    // return data
+    return new (Object.getPrototypeOf(data).constructor)(data)
   }
   if (typeof data !== 'object') { return data }
   if (map.has(data)) { return map.get(data) }

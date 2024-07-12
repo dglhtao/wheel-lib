@@ -1,0 +1,33 @@
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+i { // 用i标签做iconfont图标
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, ul {
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+video {
+  max-width: 100%;
+}
