@@ -15,6 +15,7 @@ import InputNumber from '@/components/InputNumber'
 import InputNumber1 from '@/components/InputNumber1'
 import Empty from '@/components/Empty'
 import Svg from '@/components/Svg'
+import '@/components/LazyImg/vLazy' // 图片懒加载
 
 Vue.use(Loading)
 Vue.use(MyIframe)

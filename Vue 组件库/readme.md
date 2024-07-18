@@ -60,3 +60,9 @@ H5固定表头和首列的表格组件
 
 Svg图片显示
 &nbsp;
+
+### v-lazy
+
+图片懒加载
+通过Vue.directive设置方法，并在方法中用IntersectionObserver监听图片的出现
+&nbsp;
