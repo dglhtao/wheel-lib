@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "TCloudNumber-Regular";
+  src: url('./TCloudNumber-Regular.ttf') format('truetype');
+}
+
+.TCloudNumber {
+  font-family: "TCloudNumber-Regular" !important;
+  /* font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
