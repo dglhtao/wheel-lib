@@ -4,9 +4,11 @@ import throttle from './throttle'
 Vue.directive('throttle', {
   bind (el, binding) {
     const { arg, value } = binding
-    let executeFunction = null
-    executeFunction = throttle(value, arg)
-    el.addEventListener('click', executeFunction)
+    el.handler = throttle(value, arg)
+    el.addEventListener('click', el.handler)
+  },
+  unbind (el, binding) {
+    el.removeEventListener('click', el.handler)
   }
 })
 
