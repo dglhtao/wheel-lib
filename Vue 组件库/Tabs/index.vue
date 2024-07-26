@@ -113,10 +113,7 @@ export default {
   height: 80px;
   display: flex;
   align-items: center;
-  // line-height: 80px;
-  // background-color: #fff;
   background-color: var(--color8);
-  // border-bottom: 2px solid #E7E7E7;
   border-bottom: 2px solid var(--color5);
 
   .tab {
@@ -128,7 +125,6 @@ export default {
 
     &.active {
       color: var(--color1);
-      // font-weight: 500;
       font-weight: bold;
 
       &::after {
@@ -151,7 +147,6 @@ export default {
   height: 64px;
   border: 2px solid #FD263F;
   border-radius: 40px;
-  // background-color: #fff;
   background-color: var(--color8);
 
   .tab {
@@ -170,7 +165,6 @@ export default {
 }
 .scroll-tab {
   height: 80px;
-  // line-height: 80px;
   background-color: var(--color8);
   border-bottom: 2px solid var(--color5);
   .scroll-box {
@@ -181,20 +175,10 @@ export default {
       height: 78px;
       display: flex;
       align-items: center;
-      // height: 80px;
-      // line-height: 78px;
-      // background-color: var(--color8);
-      // border-bottom: 2px solid var(--color5);
       min-width: fit-content;
-      // width: calc(50vw * 11);
       white-space: nowrap;
       display: flex;
-      // overflow-x: auto;
-      // overflow-y: hidden;
-      // display: flex;
-      // flex: nowrap;
       .tab {
-        // width: 25vw;
         width: fit-content;
         padding-left: 25px;
         padding-right: 25px;
@@ -275,10 +259,8 @@ export default {
     font-size: 28px;
     height: 100%;
     border-radius: 8px;
-    // border: 1px solid var(--color10);
     color: var(--color2);
     &.active {
-      // border: 1px solid var(--color5);
       background: var(--color9);
       font-weight: 500;
       color: #FD263F;
@@ -296,15 +278,6 @@ export default {
     }
   }
 }
-// .CompetitionList-tabs {
-//   width: 100%;
-//   height: 88px;
-//   border-radius: 16px 16px 0 0;
-//   border-bottom: 0;
-//   .tab {
-//     height: 88px;
-//   }
-// }
 .subscribe-tabs {
   width: 100%;
   height: 88px;
@@ -312,7 +285,6 @@ export default {
   .tab {
     height: 88px;
   }
-  // border-bottom: 1px solid var(--color5);
 }
 .subscribe-plan-tabs {
   width: 100%;
@@ -322,13 +294,11 @@ export default {
   .tab {
     height: 88px;
   }
-  // border-bottom: 1px solid var(--color5);
 }
 
 .strategy-tabs {
   height: 120px;
   border-radius: 16px 16px 0px 0px;
-  // background: #FD263F;
   background: rgba(#FD263F, .5);
   border-bottom: 0;
 

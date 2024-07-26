@@ -21,13 +21,12 @@
   </div>
 </template>
 <script>
-import './index.scss'
+import './style/index.scss'
 import BsTableColgroup from './components/BsTableColgroup'
 import BsTableHeader from './components/BsTableHeader'
 import BsTableBody from './components/BsTableBody'
-import { throttle } from '@/utils/utils'
+import { throttle } from './utils/utils'
 import Bs from 'better-scroll'
-import { mapGetters } from 'vuex'
 
 export default {
   name: 'BsTable2',
@@ -80,16 +79,16 @@ export default {
       dataLen: 0,
       timer1: null,
       timer2: null,
-      startIndex: 0
+      startIndex: 0,
+      pxMulti: 1
     }
   },
   computed: {
-    ...mapGetters({
-      pxMulti: 'loginData/pxMulti'
-    }),
+    // 单行高度
     itemHeight () {
       return document.querySelector('td')?.clientHeight || (120 * this.pxMulti)
     },
+    // 渲染行数
     showLen () {
       return this.itemHeight !== 0 ? this.clientHeight / this.itemHeight : 100
     }
@@ -114,6 +113,7 @@ export default {
     }
   },
   mounted () {
+    this.pxMulti = document.body.clientWidth / 750
     this.dataLen = this.data.length
     this.clientWidth = this.$el.querySelector('.bs-table2-container').clientWidth
     this.clientHeight = this.$el.querySelector('.bs-table2-container').clientHeight

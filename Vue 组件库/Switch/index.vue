@@ -47,7 +47,6 @@ export default {
     const blockMarginStr = getComputedStyle(this.$refs['slide-block'], null).marginLeft
     this.blockMargin = Number(blockMarginStr.slice(0, blockMarginStr.length - 2))
     this.changeBtn()
-    // console.log(this.switchWidth, this.blockWidth, blockMarginStr.slice(0, blockMarginStr.length - 2))
   },
 
   methods: {
@@ -75,8 +74,6 @@ export default {
 .switch {
   width: 80px;
   height: 48px;
-  // padding: 3.1px;
-  // background: var(--color11);
   background: var(--color5);
   border-radius: 24px;
   position: relative;

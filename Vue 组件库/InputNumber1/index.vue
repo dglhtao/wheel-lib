@@ -5,7 +5,7 @@
     </div>
     <div :class="['input-number-box', numColor]">
       <span v-if="currentValue !== '' && (leftStr !== '' || rightStr !== '')" class="boxStr box-left" :class="{'long-box-left': longBox}">{{leftStr}}</span>
-      <input class="input" :class="{'iOSInput' : isIOS}" maxlength="20" :disabled="disabled" :placeholder="placeholder"
+      <input class="input" maxlength="20" :disabled="disabled" :placeholder="placeholder"
         :value="currentValue" @change="handleChange" @focus="handleFocus" @keydown="handleEnter" @blur="handleBlur" type="number" />
       <span v-if="currentValue !== '' && (leftStr !== '' || rightStr !== '')" class="boxStr box-right" :class="{'long-box-right': longBox}">{{rightStr}}</span>
     </div>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { add, sub, toFixed, isIOS } from '@/utils/utils'
+import { add, sub, toFixed } from '@/utils/utils'
 import { mapGetters } from 'vuex'
 const isValueNumber = value => (/(^-?[0-9]+\.{1}\d+$)|(^-?[1-9][0-9]*$)|(^-?0{1})$/).test(value + '')
 
@@ -89,8 +89,7 @@ export default {
     return {
       currentValue: '',
       timer: null,
-      toast: false,
-      isIOS: isIOS()
+      toast: false
     }
   },
   computed: {
@@ -236,16 +235,9 @@ export default {
     justify-content: flex-start;
   }
   .box-right {
-    // padding-right: 6px;
     padding-right: 15px;
     justify-content: flex-end;
   }
-  // .long-box-left {
-  //   padding-left: 15px;
-  // }
-  // .long-box-right {
-  //   padding-right: 15px;
-  // }
   .red {
     color: #FD263F;
   }
@@ -268,12 +260,10 @@ export default {
   }
   .jia {
     right: 0;
-    // border-radius: 0 8px 8px 0;
     border-left: 2px solid #FD263F;
   }
   .jian {
     left: 0;
-    // border-radius: 8px 0 0 8px;
     border-right: 2px solid #FD263F;
   }
   .icon-inp {
@@ -320,8 +310,6 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    // text-align: center;
-    // line-height: 44px;
     color: #fff;
     border-radius: 8px;
     background-color: rgba(0, 0, 0, .7);
@@ -346,7 +334,6 @@ export default {
 }
 .priceRange {
   min-width: 200px;
-  // width: 208px;
   height: 64px;
   padding: 0;
   border: 1px solid var(--color5);

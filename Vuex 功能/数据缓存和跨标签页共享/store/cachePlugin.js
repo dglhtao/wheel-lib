@@ -1,21 +1,5 @@
 import { isObject, merger, removeObserve, setItem, getItem } from '@/utils/utils'
 
-// const get = (data, path) => {
-//   return path.split('/').reduce((obj, key) => {
-//     return obj && obj[key]
-//   }, data)
-// }
-
-// const set = (data, path, val) => {
-//   const ps = path.split('/')
-//   const obj = ps.slice(0, -1).reduce((obj, key) => {
-//     return obj[key] ? obj[key] : {}
-//   }, data)
-//   obj[ps.pop()] = val
-
-//   return data
-// }
-
 export default ({ prefix = '__vuex__', lm = [] }) => {
   return store => {
     const lmfn = key => {

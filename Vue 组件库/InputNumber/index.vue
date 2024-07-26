@@ -3,7 +3,7 @@
     <div class="jian flex" @click="handleDown">
       <div class="icon icon-jian icon-inp"></div>
     </div>
-    <input class="input" :class="{'iOSInput' : isIOS, 'inputNumAnima': inputNumAnima}" maxlength="20" :disabled="disabled" :placeholder="placeholder"
+    <input class="input" :class="{'inputNumAnima': inputNumAnima}" maxlength="20" :disabled="disabled" :placeholder="placeholder"
       :value="currentValue" @change="handleChange" @focus="handleFocus" type="number" />
     <div class="jia flex" @click="handleUp">
       <div class="icon icon-jia icon-inp"></div>
@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import { isIOS } from '@/utils/utils'
 import { mapGetters } from 'vuex'
 const isValueNumber = value => (/(^-?[0-9]+\.{1}\d+$)|(^-?[1-9][0-9]*$)|(^-?0{1})$/).test(value + '')
 
@@ -69,8 +68,7 @@ export default {
     return {
       currentValue: '',
       timer: null,
-      toast: false,
-      isIOS: isIOS()
+      toast: false
     }
   },
 
@@ -179,12 +177,10 @@ export default {
   height: 68px;
   padding: 0 68px;
   border: 1px solid #FD263F;
-  // border-radius: 8px;
   .input {
     width: 100%;
     height: 100%;
     font-size: 30px;
-    // color: var(--color1);
     background-color: var(--color8);
     text-align: center;
     transition: font-size .09s;
@@ -207,12 +203,10 @@ export default {
   }
   .jia {
     right: 0;
-    // border-radius: 0 8px 8px 0;
     border-left: 2px solid #FD263F;
   }
   .jian {
     left: 0;
-    // border-radius: 8px 0 0 8px;
     border-right: 2px solid #FD263F;
   }
   .icon-inp {
@@ -259,8 +253,6 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    // text-align: center;
-    // line-height: 44px;
     color: #fff;
     border-radius: 8px;
     background-color: rgba(0, 0, 0, .7);
