@@ -1,15 +1,25 @@
-export const debounce = (func, wait) => {
-  let timeout
-  const debounced = (...args) => {
-    clearTimeout(timeout)
-    timeout = setTimeout(() => {
-      timeout = null
-      func(...args)
-    }, wait)
+// immediate 标明首次调用是否立即执行
+export const debounce = function (func, wait, immediate = false) {
+  let timer = null
+  const debounceFunc = function () {
+    if (immediate) {
+      if (!timer) {
+        func.apply(this, arguments)
+      } else {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(() => { timer = null }, wait)
+    } else {
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        func.apply(this, arguments)
+        timer = null
+      }, wait)
+    }
   }
-  debounced.cancel = function () {
-    clearTimeout(timeout)
-    timeout = null
+  debounceFunc.cancel = function () {
+    clearTimeout(timer)
+    timer = null
   }
-  return debounced
+  return debounceFunc
 }
