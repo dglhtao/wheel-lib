@@ -1,0 +1,11 @@
+yarn.lock
+src/style/dicon.js
+src/proto/proto.js
+
+dist/
+*.log
+config.js
+src/assets/*.png
+
+# 注释
+**/__tests__/**

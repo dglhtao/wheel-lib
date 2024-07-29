@@ -1,0 +1,16 @@
+{
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node verify-commit.js"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
+
+// pre-commit 钩子触发时（提交前）运行 lint-staged
+// commit-msg 钩子触发时（提交消息被接受前），运行 verify-commit.js 用于校验提交消息是否符合规范
+// lint-staged 对于 .js .jsx .vue 的文件依次执行 vue-cli-service lint （Vue CLI 代码检查器）、git add （文件暂存）
